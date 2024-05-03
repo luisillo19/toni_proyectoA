@@ -13,8 +13,8 @@
 }
 
 /* ******************************** */
+/* VARIABLES */
 
-/* Colores */
 
 /* ******************************** */
 
@@ -33,15 +33,23 @@ nav.menu-principal {
         align-items: end;
     }
 }
+/* CARRUSEL */
+.main__carrusel {
+  display: none;
+}
 
 
 /* MQ */
 /* IPAD */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48rem) and (orientation: portrait) {
+  
     nav.menu-principal {
+      height: revert;
         flex-direction: row;
         justify-content: space-between;
         align-items: start;
+        
+        border-bottom: 1px solid grey;
         
         & .menu-principal__logo-link {
 
@@ -51,25 +59,46 @@ nav.menu-principal {
         }
 
         & .menu-principal__parrafo{
-          flex-basis: 400px;
+          flex-basis: 40%;
+          background: url(../svg/logoFondo.svg) no-repeat center center;
+          background-size: 90% 90%;
         }
+      }
     }
-}
-
-/* DESKTOP */
-@media screen and (min-width: 1024px) {
-    nav.menu-principal {
-
+    
+    /* DESKTOP */
+    @media screen and (min-width: 75rem) {
+      /* CENTRADO */
+      header, .main__texto, .footer__contenido{
+        max-width: 1366px;
+        margin: 0 auto;
+      }
+      nav.menu-principal {
+        height: revert;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        
         & .menu-principal__logo-link {
           display: flex;
           flex-direction: row-reverse;
-
+          
           & .menu-principal__logo{
-            display: initial;
+            display: revert;
           }
         }
         & .menu-principal__parrafo{
+          flex-basis: 40%;
           order: 1;
         }
     }
+    /* CARRUSEL */
+    .main__carrusel {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* FOOTER */
+
+
 }
