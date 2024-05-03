@@ -8,8 +8,8 @@
 
 /* Tipografía */
 @font-face {
-  font-family: "";
-  src: url("") format("woff2"), url("") format("woff");
+    font-family: "";
+    src: url("") format("woff2"), url("") format("woff");
 }
 
 /* ******************************** */
@@ -17,3 +17,59 @@
 /* Colores */
 
 /* ******************************** */
+
+/* HEADER */
+
+/* NAV */
+nav.menu-principal {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & .menu-principal__logo-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
+}
+
+
+/* MQ */
+/* IPAD */
+@media screen and (min-width: 768px) {
+    nav.menu-principal {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        
+        & .menu-principal__logo-link {
+
+          & .menu-principal__logo{
+            display: none;
+          }
+        }
+
+        & .menu-principal__parrafo{
+          flex-basis: 400px;
+        }
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1024px) {
+    nav.menu-principal {
+
+        & .menu-principal__logo-link {
+          display: flex;
+          flex-direction: row-reverse;
+
+          & .menu-principal__logo{
+            display: initial;
+          }
+        }
+        & .menu-principal__parrafo{
+          order: 1;
+        }
+    }
+}
